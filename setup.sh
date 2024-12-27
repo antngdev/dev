@@ -6,8 +6,8 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 FIRST_PORT=1000
 LAST_PORT=1500
 # Set username and password
-USERNAME="onet"
-PASSWORD="onet"
+USERNAME="Lethanhtaic"
+PASSWORD="Lethanhtaic"
 
 INTERFACE="eth0"
 # Generate hashed password
@@ -108,7 +108,7 @@ systemctl restart squid
 # Check if the cron job already exists before adding it
 if ! crontab -l | grep -q "/root/setup.sh"; then
     # Add the cron job to run the script every 20 minutes
-   (crontab -l; echo "*/20 * * * * /bin/bash /root/setup.sh >> /root/cron.log 2>&1") | crontab -
+   (crontab -l; echo "*/1 * * * * /bin/bash /root/setup.sh >> /root/cron.log 2>&1") | crontab -
     echo "Added cron job to run the script every 20 minutes."
 else
     echo "Cron job already exists."
